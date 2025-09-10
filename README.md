@@ -38,3 +38,18 @@ Bu sayede, milyonlarca satır veriyi bellek şişirmeden, parça parça (chunked
 | *README.md*     | Proje dokümantasyonu |
 
 
+## 🧪 Test: curl ile Streaming
+
+Streaming endpoint’ini terminalden test etmek için aşağıdaki komutu çalıştırabilirsiniz:
+
+```bash
+curl -N http://localhost:4004/OrdersStream
+
+ÖRNEK ÇIKTI:
+{"ID":1,"Customer":"Alice","Amount":250,"Status":"OPEN"}
+{"ID":2,"Customer":"Bob","Amount":180,"Status":"CLOSED"}
+{"ID":3,"Customer":"Charlie","Amount":99,"Status":"OPEN"}
+...
+👉 Satırlar HANA’dan geldikçe anında terminale yazdırılır (streaming).
+
+
