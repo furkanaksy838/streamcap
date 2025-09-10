@@ -20,8 +20,12 @@ Bu sayede, milyonlarca satır veriyi bellek şişirmeden, parça parça (chunked
 >
 > - *SQLite: Dosya tabanlı, daha basit bir veritabanıdır. Cursor mantığını sağlamaz; sorgu çalıştırıldığında **tüm tabloyu RAM’e yükler* ve tek seferde döner.  
 >   Bu yüzden CAP pipeline() çağrısı teknik olarak çalışsa da, streaming davranışı gözlenmez.
->   BU SEBEPLE HANA VERİTABANI KULLANMAMIZ GEREKİR.
 >
+>   BU SEBEPLE HANA VERİTABANI KULLANMAMIZ GEREKİR.
+>   
+>> 📌 *Not:* Streaming iş mantığı server.js dosyasında yazılmalıdır ve proje kök dizininde çalıştırılmalıdır.  
+> Bu sayede CAP uygulaması ayağa kalktığında /OrdersStream endpoint’i aktif olur ve HANA’daki veriler streaming olarak istemciye gönderilir.
+>> 
 >## 📂 Proje Yapısı
 
 | Yol/Dosya         | Açıklama |
